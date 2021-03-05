@@ -8,37 +8,29 @@ namespace ConsoleApp1
     {
 
 
-        public static string Task1()
+        public static int Task1(int a, int b)
         {
             //1 Пользователь вводит 2 числа (A и B). Возвести число A в степень B.
-            int a;
-            int aDef;
-            int b;
-            int i;
-            Console.Write("Enter A ");
-            a = Convert.ToInt32(Console.ReadLine());
-            aDef = a;
-            Console.Write("Enter B ");
-            b = Convert.ToInt32(Console.ReadLine());
-            for (i = 1; i < b; i++)
+          
+            int aDef = a;           
+            for (int i = 1; i < b; i++)
             {
                 a = a * aDef;
             }
-            string result = ($"{aDef}^{b}= {a}");
-            return result;
+           Console.WriteLine($"{aDef}^{b}= {a}");
+            return a;
         }
 
-        public static int[] Task2() {
+        public static int[] Task2(int a) {
 
             // 2 Пользователь вводит 1 число (A). Вывести все числа от 1 до 1000, которые делятся на A.
-            int a;
-            int i;
+                      
             int div;
-            int[] result = new int[1000];
+            int[] result = new int[1000/a];
             Console.Write("Enter A ");
             a = Convert.ToInt32(Console.ReadLine());
             Console.Write($"divisible by {a}: ");
-            for (i = 1; i <= 1000; i++)
+            for (int i = 1; i <= 1000; i++)
             {
                 div = i % a;
                 if (i != 0 && div == 0)
@@ -49,27 +41,21 @@ namespace ConsoleApp1
             return result;
         }
 
-        public static int Task3() {
+        public static int Task3(int a) {
 
             // 3 Пользователь вводит 1 число(A).Найдите количество положительных целых чисел, квадрат которых меньше A.
 
-            int a;
-
-            Console.Write("Enter A ");
-            a = Convert.ToInt32(Console.ReadLine());
-            for (int i = 0; (i * i) < a; i++) { }
-            return a;
+            int i = 0;
+            for (; (i * i) < a; i++) { }
+            return i;
         }
 
-        public static int Task4() {
+        public static int Task4(int a) {
             // 4 Пользователь вводит 1 число(A).Вывести наибольший делитель(кроме самого A) числа A.
-
-            int a;
+                        
             int test;
             int div = 0;
-            Console.Write("Enter A ");
-            a = Convert.ToInt32(Console.ReadLine());
-
+           
             for (int i = 1; i < a; i++)
             {
                 test = a % i;
@@ -79,17 +65,11 @@ namespace ConsoleApp1
             return div;
         }
 
-        public static int Task5() {
+        public static int Task5(int a, int b) {
             // 5 Пользователь вводит 2 числа (A и B). Вывести сумму всех чисел из диапазона от A до B, которые делятся без остатка на 7. (Учтите, что при вводе B может оказаться меньше A).
 
-
-            int a;
-            int b;
             int sum = 0;
-            Console.Write("Enter A ");
-            a = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Enter B ");
-            b = Convert.ToInt32(Console.ReadLine());
+           
             if (a < b)
             {
                 for (; a < b; a++)
@@ -109,12 +89,10 @@ namespace ConsoleApp1
             return sum;
         }
 
-        public static int Task6() {
+        public static int Task6(int n) {
 
             // 6 Пользователь вводит 1 число (N). Выведите N-ое число ряда фибоначчи. В ряду фибоначчи каждое следующее число является суммой двух предыдущих. Первое и второе считаются равными 1.
-
-
-            int n;
+                       
             double fib = 0;
             Console.Write("Enter A ");
             n = Convert.ToInt32(Console.ReadLine());
@@ -132,18 +110,9 @@ namespace ConsoleApp1
 
 
 
-        public static int Task7() {
+        public static int Task7(int a,int b) {
 
             // 7  Пользователь вводит 2 числа.Найти их наибольший общий делитель используя алгоритм Евклида.
-
-
-            int a;
-            int b;
-
-            Console.Write("Enter A ");
-            a = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Enter B ");
-            b = Convert.ToInt32(Console.ReadLine());
 
             while (a != 0 && b != 0)
             {
@@ -156,13 +125,11 @@ namespace ConsoleApp1
             return a;
         }
 
-        public static int Task8() {
+        public static int Task8(int x) {
 
             // 8 Пользователь вводит целое положительное число, которое является кубом целого числа N. Найдите число N методом половинного деления.
-            int x;
-
-            Console.Write("Enter x ");
-            x = Convert.ToInt32(Console.ReadLine());
+            
+           
             int left = 0;
             int right = x;
             int midle = x / 2;
@@ -178,16 +145,13 @@ namespace ConsoleApp1
 
 
 
-        public static int Task9() {
-
+        public static int Task9(int n) {
 
             // 9 Пользователь вводит 1 число.Найти количество нечетных цифр этого числа.
-              int n;
+             
             string numStr = "";
             int num;
-            int i = 0;
-            Console.Write("Enter N ");
-            n = Convert.ToInt32(Console.ReadLine());
+            int i = 0;          
             while (n > 0)
             {
                 numStr = numStr + (n % 10);
@@ -201,10 +165,9 @@ namespace ConsoleApp1
             return i;
         }
 
-        public static int Task10() {
+        public static int Task10(int n) {
             // 10 Пользователь вводит 1 число.Найти число, которое является зеркальным отображением последовательности цифр заданного числа, например, задано число 123, вывести 321.
-
-            int n;
+                        
             int numInt;
             string numStr = "";
             Console.Write("Enter N ");
@@ -220,20 +183,16 @@ namespace ConsoleApp1
 
 
 
-        public static int Task11() {
+        public static int[] Task11(int n) {
             //11Пользователь вводит целое положительное  число (N). Выведите числа в диапазоне от 1 до N, сумма четных цифр которых больше суммы нечетных. 
-
-
-             int n;
+                        
             int k = 0;
             int odd = 0;
             int even = 0;
-            Console.Write("Enter N ");
-            n = Convert.ToInt32(Console.ReadLine());
-
+            int[] result = new int[n];
+            int count = 0;
             for (int i = 1; i < n; i++)
             {
-
                 int j = i;
                 while (j > 0)
                 {
@@ -247,27 +206,22 @@ namespace ConsoleApp1
 
                 }
                 if (even > odd)
-                    Console.WriteLine(i);
+                {  result[count] = i;
+                    count++;
+                 }
                 odd = 0;
                 even = 0;
-            }
+                  }
+            return result;
         }
 
-        public static string Task12()
+        public static string Task12(int a, int b)
         {
-
             //12 Пользователь вводит 2 числа. Сообщите, есть ли в написании двух чисел одинаковые цифры. Например, для пары 123 и 3456789, ответом будет являться “ДА”, а, для пары 500 и 99 - “НЕТ”.
-
-            int a;
-            int b;
+                        
             int aNum;
             int bNum;
             int boole = 0;
-
-            Console.Write("Enter A ");
-            a = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Enter B ");
-            b = Convert.ToInt32(Console.ReadLine());
 
             for (int i = 0; i < a; i++)
             {
