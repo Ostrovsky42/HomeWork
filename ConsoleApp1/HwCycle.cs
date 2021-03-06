@@ -7,7 +7,7 @@ namespace ConsoleApp1
     public static class HwCycle
     {
 
-
+      
         public static int Task1(int a, int b)
         {
             //1 Пользователь вводит 2 числа (A и B). Возвести число A в степень B.

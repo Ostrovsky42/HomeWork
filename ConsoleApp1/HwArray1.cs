@@ -4,9 +4,13 @@ using System.Text;
 
 namespace ConsoleApp1
 {
-    class HwArray1
+    public static class HwArray1
     {
-            public static int Task1(int[] array)
+
+    
+
+
+        public static int Task1(int[] array)
             {
                 Console.WriteLine("1 Найти минимальный элемент массива");
 

@@ -7,6 +7,8 @@ namespace ConsoleApp1
     public static class HwIfElse
 
     {
+        
+
         public static int Task1(int a, int b)
         {
             // 1 Пользователь вводит 2 числа (A и B). Если A>B, подсчитать A+B, если A=B, подсчитать A*B, если A<B, подсчитать A-B.

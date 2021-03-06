@@ -4,26 +4,7 @@ namespace ConsoleApp4
 {
     class HwVar
     {
-        static void Main(string[] args)
-        {
-
-            // Задача 1
-                       
-
-            // Задача 2
-           
-
-            //Задача 3
-            
-
-
-            //Задача 4
-         
-
-
-            //Задача 5
-           
-        }
+      
 
 
 
@@ -49,7 +30,6 @@ namespace ConsoleApp4
         public static int[] Task3(int a, int b)
         {
 
-            int divisionResult;
             int[] division = new int[2];
             division[0] = a / b;
             Console.WriteLine("division result = " + division[0]);
