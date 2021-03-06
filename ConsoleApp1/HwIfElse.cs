@@ -7,8 +7,8 @@ namespace ConsoleApp1
     public static class HwIfElse
 
     {
+      
         
-
         public static int Task1(int a, int b)
         {
             // 1 Пользователь вводит 2 числа (A и B). Если A>B, подсчитать A+B, если A=B, подсчитать A*B, если A<B, подсчитать A-B.
@@ -110,13 +110,52 @@ namespace ConsoleApp1
 
 
 
+        public static string Task5(int num)
 
+        {     //Пользователь вводит двузначное число. Выведите в консоль прописную запись этого числа. Например при вводе “25” в консоль будет выведено “двадцать пять”.
+
+            string answer;
+            string[] stringToTen = new string[10] {"", "один", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять" };
+            string[] stringAfterTen = new string[10] { "", "десять " , "двадцать ", "тридцать ", "сорок ", "пятьдсят ", "шестьдесят ", "семьдесят ", "восемдесят ", "девяносто " };
+            string[] stringTenToTwenty = new string[10] { "", "одинадцать ", "двенадцать ", "тринадцать ", "четырнадцать ", "пятьнадцать ", "шестьнадцать ", "семьнадцать ", "восемнадцать ", "девятнадцать " };
+            
+            if (num / 10 == 1&&num<20)
+            {
+                switch (num % 10)
+                { 
+                    case 0:
+                        return stringTenToTwenty[0];
+                    case 1:
+                        return stringTenToTwenty[1];                        
+                    case 2:
+                        return stringTenToTwenty[2];                      
+                    case 3:
+                        return stringTenToTwenty[3];                        
+                    case 4:
+                        return stringTenToTwenty[4];                      
+                    case 5:
+                        return stringTenToTwenty[5];                     
+                    case 6:
+                        return stringTenToTwenty[6];                      
+                    case 7:
+                        return stringTenToTwenty[7];                    
+                    case 8:
+                        return stringTenToTwenty[8];                        
+                    case 9:
+                        return stringTenToTwenty[9];                    
+                                                                                            //нечестно вышло
+                }
+            }answer = stringAfterTen[num / 10] + stringToTen[num % 10];
+            return answer;
+           
+        }
+       
 
 
 
 
     }
-}
+
             
 
 
