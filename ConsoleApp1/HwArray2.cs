@@ -93,41 +93,32 @@ namespace ConsoleApp1
             {
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
-                    if (i == 0 && j == 0) //верхний левый угол
+                    if (i == 0 && j == 0&& (array[i, j] > (array[i + 1, j] + array[i + 1, j + 1] + array[i, j + 1]))) //верхний левый угол
                     {
-                        if (array[i, j] > (array[i + 1, j] + array[i + 1, j + 1] + array[i, j + 1]))
-                            count++;
-                        
+                            count++;                        
                     }
-                    else if ((i == array.GetLength(0) - 1) && j == 0) //нижний левый угол
-                    {
-                        if (array[i, j] > array[i - 1, j] + array[i - 1, j + 1] + array[i, j + 1])
+                    else if ((i == array.GetLength(0) - 1) && j == 0&&(array[i, j] > array[i - 1, j] + array[i - 1, j + 1] + array[i, j + 1])) //нижний левый угол
+                    {                        
                             count++;
                     }
-                    else if(i==0&&(j==array.GetLength(1) - 1)) //верхний правый угол 
+                    else if(i==0&&(j==array.GetLength(1) - 1)&& (array[i, j] > array[i + 1, j] + array[i + 1, j - 1] + array[i, j - 1])) //верхний правый угол 
                     {
-                        if (array[i, j] > array[i + 1, j] + array[i + 1, j - 1] + array[i, j - 1])
                             count++;
                     }
-                    else if(i== array.GetLength(0) - 1&&j== array.GetLength(1) - 1) // нижний правый угол
-                    {
-                        if (array[i, j] > array[i - 1, j] + array[i - 1, j - 1] + array[i, j - 1])
+                    else if(i== array.GetLength(0) - 1&&j== array.GetLength(1) - 1&& (array[i, j] > array[i - 1, j] + array[i - 1, j - 1] + array[i, j - 1])) // нижний правый угол
+                    {                       
                             count++;
-                    }else if (i != 0 && i!=array.GetLength(0) - 1 && j == 0) //левый край
-                    {
-                        if (array[i, j] > array[i + 1, j] + array[i - 1, j] + array[i + 1, j + 1] + array[i - 1, j + 1] + array[i, j + 1])
+                    }else if (i != 0 && i!=array.GetLength(0) - 1 && j == 0&& (array[i, j] > array[i + 1, j] + array[i - 1, j] + array[i + 1, j + 1] + array[i - 1, j + 1] + array[i, j + 1])) //левый край
+                    {                    
                             count++;
-                    }else if (i == 0 && j != 0&&j!= array.GetLength(1) - 1) // верхний край
-                    {
-                        if (array[i, j] > array[i, j + 1] + array[i, j - 1] + array[i + 1, j + 1] + array[i + 1, j - 1] + array[i + 1, j])
+                    }else if (i == 0 && j != 0&&j!= array.GetLength(1) - 1&& (array[i, j] > array[i, j + 1] + array[i, j - 1] + array[i + 1, j + 1] + array[i + 1, j - 1] + array[i + 1, j])) // верхний край
+                    {                        
                             count++;
-                    }else if(i== array.GetLength(0) - 1 && j != 0&&j!= array.GetLength(1) - 1) //нижний край
+                    }else if(i== array.GetLength(0) - 1 && j != 0&&j!= array.GetLength(1) - 1&& (array[i, j] > array[i, j + 1] + array[i, j - 1] + array[i - 1, j + 1] + array[i - 1, j - 1] + array[i - 1, j])) //нижний край
                     {
-                        if (array[i, j] > array[i, j + 1] + array[i, j - 1] + array[i - 1, j + 1] + array[i - 1, j - 1] + array[i - 1, j])
                             count++;
-                    }else if(i!=0&&i!= array.GetLength(0) - 1&&j== array.GetLength(1) - 1) //правый край
+                    }else if(i!=0&&i!= array.GetLength(0) - 1&&j== array.GetLength(1) - 1&& (array[i, j] > array[i + 1, j] + array[i - 1, j] + array[i - 1, j - 1] + array[i, j - 1] + array[i + 1, j - 1])) //правый край
                     {
-                        if (array[i, j] > array[i + 1, j] + array[i - 1, j] + array[i - 1, j - 1] + array[i, j - 1] + array[i + 1, j - 1])
                             count++;
                     } else
                     {
