@@ -7,24 +7,7 @@ namespace ConsoleApp1
     public static class HwIfElse
 
     {
-        public static void Main()
-        {
-            Random random = new Random();
-            int a = 10;//random.Next(10,99);
-           // int b = random.Next();
-           // int c = random.Next();
-            string ar;
-            for (int i = 0; i < 89; i++)
-            {
-
-                ar = Task5(a);
-                Console.WriteLine(ar);
-                a++;
-               // b++;
-
-
-            }
-        }
+        
 
         public static int Task1(int a, int b)
         {
