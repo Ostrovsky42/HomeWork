@@ -7,7 +7,7 @@ namespace ConsoleApp1
     public static class HwCycle
     {
 
-      
+       
         public static int Task1(int a, int b)
         {
             //1 Пользователь вводит 2 числа (A и B). Возвести число A в степень B.
@@ -16,26 +16,30 @@ namespace ConsoleApp1
             for (int i = 1; i < b; i++)
             {
                 a = a * aDef;
-            }
-           Console.WriteLine($"{aDef}^{b}= {a}");
+            }           
             return a;
         }
 
         public static int[] Task2(int a) {
 
             // 2 Пользователь вводит 1 число (A). Вывести все числа от 1 до 1000, которые делятся на A.
-                      
+
+            if (a == 0)
+            {
+                throw new Exception("Деление на ноль");
+            }
             int div;
             int[] result = new int[1000/a];
-            Console.Write("Enter A ");
-            a = Convert.ToInt32(Console.ReadLine());
+            int count = 0;
+          
             Console.Write($"divisible by {a}: ");
             for (int i = 1; i <= 1000; i++)
             {
                 div = i % a;
                 if (i != 0 && div == 0)
                 {
-                    result[i] = i;
+                    result[count] = i;
+                    count++;
                 }
             }
             return result;
@@ -57,8 +61,8 @@ namespace ConsoleApp1
             int div = 0;
            
             for (int i = 1; i < a; i++)
-            {
-                test = a % i;
+            {               
+               test = a % i;
                 if (test == 0)
                     div = i;
             }
@@ -94,9 +98,7 @@ namespace ConsoleApp1
             // 6 Пользователь вводит 1 число (N). Выведите N-ое число ряда фибоначчи. В ряду фибоначчи каждое следующее число является суммой двух предыдущих. Первое и второе считаются равными 1.
                        
             double fib = 0;
-            Console.Write("Enter A ");
-            n = Convert.ToInt32(Console.ReadLine());
-
+           
             for (int i = 0; i <= n; i++)
             {
                 fib = (Math.Pow(((1 + Math.Sqrt(5)) / 2), i)) / Math.Sqrt(5);
@@ -107,13 +109,13 @@ namespace ConsoleApp1
 
         }
 
-
-
-
         public static int Task7(int a,int b) {
 
             // 7  Пользователь вводит 2 числа.Найти их наибольший общий делитель используя алгоритм Евклида.
-
+            if(a == 0 || b == 0)
+            {
+                throw new Exception("Деление на ноль");
+            }
             while (a != 0 && b != 0)
             {
                 if (a > b)
@@ -142,9 +144,6 @@ namespace ConsoleApp1
             }
             return midle; }
 
-
-
-
         public static int Task9(int n) {
 
             // 9 Пользователь вводит 1 число.Найти количество нечетных цифр этого числа.
@@ -169,9 +168,7 @@ namespace ConsoleApp1
             // 10 Пользователь вводит 1 число.Найти число, которое является зеркальным отображением последовательности цифр заданного числа, например, задано число 123, вывести 321.
                         
             int numInt;
-            string numStr = "";
-            Console.Write("Enter N ");
-            n = Convert.ToInt32(Console.ReadLine());
+            string numStr = "";           
             while (n > 0)
             {
                 numStr = numStr + (n % 10);
@@ -181,17 +178,16 @@ namespace ConsoleApp1
             return numInt;
         }
 
-
-
         public static int[] Task11(int n) {
-            //11Пользователь вводит целое положительное  число (N). Выведите числа в диапазоне от 1 до N, сумма четных цифр которых больше суммы нечетных. 
-                        
+            // 11 Пользователь вводит целое положительное  число (N). Выведите числа в диапазоне от 1 до N, сумма четных цифр которых больше суммы нечетных. 
+
             int k = 0;
             int odd = 0;
             int even = 0;
-            int[] result = new int[n];
+            int[] preResult = new int[n];            
             int count = 0;
-            for (int i = 1; i < n; i++)
+                       
+                for (int i = 1; i < n; i++)
             {
                 int j = i;
                 while (j > 0)
@@ -206,12 +202,19 @@ namespace ConsoleApp1
 
                 }
                 if (even > odd)
-                {  result[count] = i;
+                { preResult[count] = i;
                     count++;
-                 }
+                }
                 odd = 0;
                 even = 0;
-                  }
+
+            }
+            int[] result = new int[count];
+            for (int i = 0; i < count; i++)
+            {
+                result[i] = preResult[i];
+            }
+
             return result;
         }
 

@@ -48,14 +48,14 @@ namespace ConsoleApp1
             if (x > 0)
             {
                 if (y > 0)
-                    return (" I");
+                    return ("I");
                 else
-                    return (" IV");
+                    return ("IV");
             }
             else if (y > 0)
-                return (" II");
+                return ("II");
             else
-                return (" III");
+                return ("III");
 
         }
 
@@ -92,20 +92,32 @@ namespace ConsoleApp1
             double d;
             double x1;
             double x2;
-            double[] result = new double[2];
+            int i = 1;
+            double[] result=new double[i]; 
+
+            if (a == 0)
+            {
+                throw new Exception("Нет корней, на ноль делить нельзя");
+            }
 
             if (a != 0)
             {
                 d = b * b - (4 * a * c);
                 if (d < 0)
-                    Console.WriteLine("no roots");
+                {
+                    throw new Exception("Нет корней");
+                }                  
                 else if (d == 0)
                 {
+                    
                     x1 = -b / (2 * a);
-                    Console.WriteLine($"d=0  X={Math.Round(x1, 2)} ");
+                    result[0] = Math.Round(x1, 2);
+                   
                 }
                 else
                 {
+                    i++;
+                    result = new double[i];
                     x1 = (-b - Math.Pow(d, 0.5)) / (2 * a);
                     x2 = (-b + Math.Pow(d, 0.5)) / (2 * a);
                     result[0] = Math.Round(x1, 2);
@@ -123,9 +135,9 @@ namespace ConsoleApp1
         {     //Пользователь вводит двузначное число. Выведите в консоль прописную запись этого числа. Например при вводе “25” в консоль будет выведено “двадцать пять”.
 
             string answer;
-            string[] stringToTen = new string[10] { "", "один", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять" };
-            string[] stringAfterTen = new string[10] { "", "десять ", "двадцать ", "тридцать ", "сорок ", "пятьдсят ", "шестьдесят ", "семьдесят ", "восемдесят ", "девяносто " };
-            string[] stringTenToTwenty = new string[10] { "", "одинадцать ", "двенадцать ", "тринадцать ", "четырнадцать ", "пятьнадцать ", "шестьнадцать ", "семьнадцать ", "восемнадцать ", "девятнадцать " };
+            string[] stringToTen = new string[10] { "", " один", " два", " три", " четыре", " пять", " шесть", " семь", " восемь", " девять" };
+            string[] stringAfterTen = new string[10] { "", "десять", "двадцать", "тридцать", "сорок", "пятьдесят", "шестьдесят", "семьдесят", "восемьдесят", "девяносто" };
+            string[] stringTenToTwenty = new string[10] { "", "одинадцать", "двенадцать", "тринадцать", "четырнадцать", "пятнадцать", "шестьнадцать", "семьнадцать", "восемнадцать", "девятнадцать" };
 
             if (num / 10 == 1 && num < 20)
             {

@@ -7,7 +7,17 @@ namespace ConsoleApp1
     public static class HwArray1
     {
 
-    
+        public static void Main()
+        {
+            int[] ann = new int[] {12,1,4,7,2,8 };
+            int[] arr =  Task10(ann);
+            for(int i = 0; i < 6; i++)
+            {
+                Console.WriteLine($"{ann[i]},{ arr[i]}");
+            }
+
+            
+        }
 
 
         public static int Task1(int[] array)
@@ -45,9 +55,11 @@ namespace ConsoleApp1
 
                 for (int i = 1; i < array.Length; i++)
                 {
-                    if (min > array[i])
-                        min = array[i];
+                if (min > array[i])
+                {
+                    min = array[i];
                     iMin = i;
+                }
                 }
                 return iMin;
             }
@@ -60,11 +72,11 @@ namespace ConsoleApp1
 
                 int max = array[0];
                 int iMax = 0;
-                for (int i = 1; i < array.Length; i++)
-                {
-                    if (max < array[i])
-                        max = array[i];
-                    iMax = i;
+            for (int i = 1; i < array.Length; i++)
+            {
+                if (max < array[i]) { 
+                max = array[i];
+                iMax = i; }
                 }
                 return iMax;
             }
@@ -83,33 +95,36 @@ namespace ConsoleApp1
                 return sum;
             }
 
-            public static void Task6(int[] array)
+            public static int[] Task6(int[] array)
             {
                 Console.WriteLine("6 Сделать реверс массива(массив в обратном направлении)");
 
                 int temp = 0;
+                int temp1 = 0;
 
-                for (int i = 0; i < array.Length; i++)
+            for (int i = 0; i < array.Length/2; i++)
                 {
-                    temp = array[i];
-                    array[(array.Length) - i] = temp;
+                temp = array[i];
+                temp1 = array[(array.Length -1) - i];
+                array[(array.Length-1) - i] = temp;
+                array[i] = temp1;
                 }
-
+            return array;
             }
 
             public static int Task7(int[] array)
             {
                 Console.WriteLine("7 Посчитать количество нечетных элементов массива");
 
-                int sum = 0;
+                int count = 0;
                 for (int i = 0; i < array.Length; i++)
                 {
                     if (array[i] % 2 != 0)
                     {
-                        sum += array[i];
+                    count++;
                     }
                 }
-                return sum;
+                return count;
 
             }
 
@@ -163,7 +178,7 @@ namespace ConsoleApp1
                 int temp;
                 for (int i = 0; i < array.Length; i++)
                 {
-                    for (int j = i + 1; j < array.Length - i; j++)
+                    for (int j = i + 1; j < array.Length; j++)
                     {
                         if (array[i] < array[j])
                         {
